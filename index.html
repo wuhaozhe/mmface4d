@@ -1,2 +1,266 @@
-test mmface4d
-hahaha
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="MMFace4D: A Large-Scale Multi-Modal 4D Face Dataset for Audio-Driven 3D Face Animation
+  ">
+  <meta property="og:title" content="MMFace4D" />
+  <meta property="og:description" content="MMFace4D: A Large-Scale Multi-Modal 4D Face Dataset for Audio-Driven 3D Face Animation" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="MMFace4D">
+  <meta name="twitter:description" content="MMFace4D: A Large-Scale Multi-Modal 4D Face Dataset for Audio-Driven 3D Face Animation">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="3D Face Animation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>MMFace4D</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MMFace4D: A Large-Scale Multi-Modal 4D Face Dataset for Audio-Driven 3D Face Animation
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=sN2_9nYAAAAJ" target="_blank">Haozhe Wu</a>,</span>
+              <span class="author-block">
+                <a href="https://hcsi.cs.tsinghua.edu.cn/" target="_blank">Jia Jia,</span>
+              <span class="author-block">
+                <a href="https://www.cs.tsinghua.edu.cn/info/1116/5088.htm" target="_blank">Junliang Xing,</span>
+              <span class="author-block">
+                <a>Hongwei Xu,
+              </span>
+              <span class="author-block">
+                <a>Xiangyuan Wang,
+              </span>
+              <span class="author-block">
+                <a>Jelo Wang</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Tsinghua University, </span>
+              <span class="author-block">FACEGOOD Inc</span>
+              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/wuhaozhe/4d_reconstruction" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2303.09797" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <source src="static/videos/supplementary.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          The demonstration video of the paper. We first show the data examples of MMFace4D dataset. Then we show examples of audio driven 3D face animation. 
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                Audio-Driven Face Animation is an eagerly anticipated technique for applications such as VR/AR, games, and movie making. 
+                With the rapid development of 3D engines, there is an increasing demand for driving 3D faces with audio. 
+                However, currently available 3D face animation datasets are either scale-limited or quality-unsatisfied, 
+                which hampers further developments of audio-driven 3D face animation. 
+                To address this challenge, we propose MMFace4D, a large-scale multi-modal 4D (3D sequence) face dataset consisting of 431 identities, 35,904 sequences, and 3.9 million frames. 
+                MMFace4D exhibits two compelling characteristics: 1) a remarkably diverse set of subjects and corpus, encompassing actors spanning ages 15 to 68, and recorded sentences with durations ranging from 0.7 to 11.4 seconds. 
+                2) It features synchronized audio and 3D mesh sequences with high-resolution face details. 
+                To capture the subtle nuances of 3D facial expressions, we leverage three synchronized RGB-D cameras during the recording process. 
+                Upon MMFace4D, we construct a non-autoregressive framework for audio-driven 3D face animation. 
+                Our framework considers the regional and composite natures of facial animations, and surpasses contemporary state-of-the-art approaches both qualitatively and quantitatively. The code, model, and dataset will be publicly available.
+            </p>
+          </div>
+          <img src="static/images/intro.png" width="150%" class="center-image" />
+          <h2 class="subtitle has-text-centered">An overview of the MMFace4D dataset.</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="content">
+        <h2 class="title is-3">Capture Setup</h2>
+        <div class="level-set has-text-justified">
+            We devise a capture system comprising three RGB-D cameras, one microphone, and one screen. 
+            Each camera is placed at the height of 1.2 meters. 
+            One camera shoots at the front of the face, the other two cameras shoot at the left and right sides with 45 degrees of angle. 
+            The cameras are accurately aligned. 
+            We leverage Azure Kinect Camera to capture RGB-D video. We record RGB video with a resolution of 1920 * 1080, and record depth video with a resolution of 640 * 576.<br>
+            &nbsp &nbsp Before recording, we built a large-scale corpus with 11,000 sentences under different scenarios such as news broadcasting, conversation, and storytelling. 
+            Each sentence has an emotion label of seven categories (neutral, angry, disgust, happy, fear, sad, surprise). 
+            For the neutral emotion, we have 2000 sentences. For the other emotions, we have 1500 sentences. Each sentence of the corpus has 17 words on average. Our corpus covers each phoneme as evenly as possible.
+        </div>
+      </div>
+      <img class="center-image" src="static/images/compare.png" width="70%" />
+      <h2 class="subtitle has-text-centered">
+        Comparison of 4D (3D sequence) face datasets. MMFace4D dataset has a competitive scale in terms of subject number (#Subj), corpus scale (#Corp), sequence number (#Seq), and duration (#Dura). Additionally, the frame per second (FPS), the emotion label (Emo), the spoken language (Lang), and the presence of topology-uniformed meshes (Mesh) are also listed.
+      </h2>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="content">
+        <h2 class="title is-3">Tool Chain</h2>
+        <div class="level-set has-text-justified">
+            The tool-chain reconstructs topology-uniformed 3D Face sequences from the RGB-D videos. 
+            We take the basel face model (BFM) as a template 3D face and deform the template to fit RGB-D videos. 
+            We construct two levels of deformation space for each 3D face: (1) the first level is the 3DMM parameters, and (2) the second level is the 3D face vertices. 
+            We design a multi-stage pipeline to fit the 3D Faces. The pipeline has three stages: (1) initialization, (2) 3DMM parameter fitting, and (3) vertex-level fitting.
+        </div>
+      </div>
+      <img class="center-image" src="static/images/framework.png" width="100%" />
+      <h2 class="subtitle has-text-centered">
+        The 3D face reconstruction pipeline. 
+      </h2>
+    </div>
+  </section>
+
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="content">
+        <h2 class="title is-3">Dataset Download</h2>
+        <div class="level-set has-text-justified">
+          <b>This dataset is available only for the academic use.</b> For privacy protection, only the landmarks, speech audio, depth data, camera intrinsics, and reconstructed mesh are publicly available. 
+          The users must sign the eula form and send the scanned form to wuhz19 [at] mails.tsinghua.edu.cn. Once approved, you will be supplied with a download link. 
+            
+          <h5 class="subtitle has-text-centered">
+            <a href="static/pdfs/EULA.pdf"
+                target="_blank">The eula form.</a>
+          </h5>
+
+          To preprocess our dataset, please see the README.md in <a href="https://github.com/wuhaozhe/4d_reconstruction"
+          target="_blank">our code</a>.
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{wu2023mmface4d,
+            title={MMFace4D: A Large-Scale Multi-Modal 4D Face Dataset for Audio-Driven 3D Face Animation},
+            author={Wu, Haozhe and Jia, Jia and Xing, Junliang and Xu, Hongwei and Wang, Xiangyuan and Wang, Jelo},
+            journal={arXiv preprint arXiv:2303.09797},
+            year={2023}
+          }
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a>.
+              <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
